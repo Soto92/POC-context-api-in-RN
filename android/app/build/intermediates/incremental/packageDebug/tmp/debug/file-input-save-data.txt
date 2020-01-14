@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jan 14 17:19:19 BRT 2020
+#Tue Jan 14 18:03:50 BRT 2020
 56.path=lib/armeabi-v7a/libjsinspector.so
 5.base=/home/ilegra0402/GIT/POC-context-api-in-RN/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 42.base=/home/ilegra0402/GIT/POC-context-api-in-RN/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
