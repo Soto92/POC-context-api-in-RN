@@ -1,45 +1,75 @@
-import React from "react";
-import { Text, SafeAreaView, View, TouchableOpacity } from "react-native";
+import React, { useContext } from "react";
+import {
+  Text,
+  View,
+  SafeAreaView,
+  StyleSheet,
+  Dimensions,
+  TextInput
+} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import { DataPersonContext } from "../../App";
+import FooterNavigator from "../components/footerNavigator";
 
-const Third = props => {
+const ThirdStep = props => {
+  const { yearBirth, setYearBirth } = useContext(DataPersonContext);
+
   return (
-    <SafeAreaView
-      style={{
-        justifyContent: "flex-start",
-        alignItems: "center",
-        height: 200
-      }}
-    >
+    <SafeAreaView style={styles.container}>
       <LinearGradient
-        style={{
-          height: 50,
-          width: "100%",
-          justifyContent: "center",
-        }}
-        colors={["#b1c0ce", "#7D94AB", "#6A809A"]}
+        style={styles.gradientHeader}
+        colors={["#FDCC06", "#FCBF05", "#FAAD02"]}
       >
-        <Text style={{ color: "white", marginLeft: 10, fontSize: 18, fontFamily: 'EBGaramond' }}>Layout 03</Text>
+        <Text style={styles.titleHeader}>Enter your year of birth</Text>
       </LinearGradient>
 
-      <LinearGradient
-        colors={["#90A6BB", "#7D94AB", "#6A809A"]}
-        style={{ borderRadius: 8, marginTop: 50 }}
-      >
-        <TouchableOpacity
-          onPress={() => props.navigation.goBack()}
-          style={{
-            width: 60,
-            height: 40,
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Text style={{ color: "white", fontFamily: 'EBGaramond' }}>Back</Text>
-        </TouchableOpacity>
-      </LinearGradient>
+      <View style={styles.content}>
+        <TextInput
+          placeholder="Year"
+          onChangeText={text => setYearBirth(text)}
+          value={yearBirth}
+          keyboardType="number-pad"
+          style={styles.input}
+        />
+      </View>
+
+     <FooterNavigator navigation={props.navigation}/>
     </SafeAreaView>
   );
 };
 
-export default Third;
+export default ThirdStep;
+
+const { width, height } = Dimensions.get("window");
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "flex-start",
+    alignItems: "center",
+    height: 200
+  },
+  gradientHeader: {
+    height: 50,
+    width: "100%",
+    justifyContent: "center"
+  },
+  titleHeader: {
+    color: "white",
+    fontFamily: "Gelasio-Regular",
+    marginLeft: 10,
+    fontSize: 18
+  },
+  content: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: height - 128,
+    width: width,
+    backgroundColor: "#FAFAFA"
+  },
+  input: {
+    height: 40,
+    width: width / 1.2,
+    borderRadius: 6,
+    borderColor: "grey",
+    borderWidth: 1
+  },
+});

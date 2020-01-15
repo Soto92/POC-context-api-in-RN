@@ -1,19 +1,23 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import First from "../layouts/firstLayout";
-import Second from "../layouts/secondLayout";
-import Third from "../layouts/thirdLayout";
+import FirstStep from "../layouts/firstLayout";
+import SecondStep from "../layouts/secondLayout";
+import ThirdStep from "../layouts/thirdLayout";
+import FourthStep from '../layouts/fourthLayout';
 
 const Router = createStackNavigator(
   {
-    First: {
-      screen: First,
+    FirstStep: {
+      screen: FirstStep,
     },
-    Second: {
-      screen: Second,
+    SecondStep: {
+      screen: SecondStep,
     },
-    Third: {
-      screen: Third,
+    ThirdStep: {
+      screen: ThirdStep,
+    },
+    FourthStep: {
+      screen: FourthStep,
     }
   },
   {

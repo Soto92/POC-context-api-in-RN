@@ -1,9 +1,26 @@
-import React from 'react';
-import Router from './src/Router/Router';
+import React, { createContext, useState } from "react";
+import Router from "./src/Router/Router";
 
-const App= () => {
+export const DataPersonContext = createContext();
+
+const App = () => {
+  const [namePerson, setNamePerson] = useState("");
+  const [nameCity, setNameCity] = useState("");
+  const [yearBirth, setYearBirth] = useState("");
+
   return (
-    <Router />
+    <DataPersonContext.Provider
+      value={{
+        namePerson,
+        setNamePerson,
+        nameCity,
+        setNameCity,
+        yearBirth,
+        setYearBirth
+      }}
+    >
+      <Router />
+    </DataPersonContext.Provider>
   );
 };
 
