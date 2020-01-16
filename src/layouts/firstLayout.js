@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Dimensions,
   TextInput,
+  StatusBar,
   View
 } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
@@ -16,6 +17,7 @@ const FirstStep = props => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="#FDCC06" barStyle="light-content" />
       <LinearGradient
         style={styles.gradientHeader}
         colors={["#FDCC06", "#FCBF05", "#FAAD02"]}

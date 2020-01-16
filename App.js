@@ -4,6 +4,7 @@ import Router from "./src/Router/Router";
 export const DataPersonContext = createContext();
 
 const App = () => {
+
   const [namePerson, setNamePerson] = useState("");
   const [nameCity, setNameCity] = useState("");
   const [yearBirth, setYearBirth] = useState("");

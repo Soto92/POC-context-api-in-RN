@@ -29,4 +29,10 @@ react-native run-android  //(if android)
 npm start
 ```
 
-by Mauricio Soto
+## Screenshot:
+
+
+![First Screen](/src/assets/screenshot/Screenshot.jpg)
+
+
+By Mauricio Soto
