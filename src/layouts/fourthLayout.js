@@ -26,7 +26,7 @@ const FourthStep = props => {
           {nameCity ? (
             <Text style={styles.message}>Your city address name is {nameCity}</Text>
           ) : (
-            <Text style={styles.message}>Name was not entered!</Text>
+            <Text style={styles.message}>City name was not entered!</Text>
           )}
 
           {yearBirth ? (
